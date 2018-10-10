@@ -1,0 +1,9 @@
+
+
+
+wc -l E.coli.fastaE
+sed 1,1d E.coli.fasta
+
+
+
+
