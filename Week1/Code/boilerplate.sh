@@ -1,5 +1,5 @@
 #!/bin/bash
-# Author: Your Name your.login@imperial.ac.uk
+# Author: Jamal Khan jak112@imperial.ac.uk
 # Script: boilerplate.sh
 # Desc: simple boilerplate for shell scripts
 # Arguments: none
