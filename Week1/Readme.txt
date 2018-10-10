@@ -5,7 +5,7 @@ Contents of the Week 1 directory
 Code Subdirectory
 
 boilerplate.sh – a short illustrative script
-CompileLaTeX.sh – this is a script to compile a LaTeX file incorporating  bibliographic information
+CompileLaTeX.sh – this is a script to compile a LaTeX file incorporating bibliographic information
 ConcatenateTwoFiles.sh – this script combines two files to form a new file
 CountLines.sh – a script to count the number of lines in a file
 csvtospace.sh – converts a csv file to a space separated file
