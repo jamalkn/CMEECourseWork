@@ -2,6 +2,4 @@ wc -l ../Data/fasta/* # counts how many lines are in each file
 sed 1,1d ../Data/fasta/E.coli.fasta # prints the file E.coli.fasta except for the first line
 sed 1,1d ../Data/fasta/E.coli.fasta | tr -d '\n' < ../Data/fasta/E.coli.fasta | grep -o 'A\|C\|G\|T' ../Data/fasta/E.coli.fasta | wc -l # counts the sequence length of E.coli.fasta
 sed 1,1d ../Data/fasta/E.coli.fasta | tr -d '\n' < ../Data/fasta/E.coli.fasta | grep -o ATGC ../Data/fasta/E.coli.fasta | wc -l # counts the number of matches of ATCG in the E.coli genome
-
-
-
+m=$(sed 1,1d ../Data/fasta/E.coli.fasta | tr -d '\n' < ../Data/fasta/E.coli.fasta | grep -o 'A\|T' ../Data/fasta/E.coli.fasta | wc -l); n=$(sed 1,1d ../Data/fasta/E.coli.fasta | tr -d '\n' < ../Data/fasta/E.coli.fasta | grep -o 'C\|G' ../Data/fasta/E.coli.fasta | wc -l); output=$(echo "scale=5;$m/$n" | bc); echo "The AT/CG ratio is " "$output" # calculates and displays the AT/CG ratio for the E.coli genome
