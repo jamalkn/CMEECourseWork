@@ -246,29 +246,29 @@ rm: cannot remove '*.out': No such file or directory
 rm: cannot remove '*.snm': No such file or directory
 rm: cannot remove '*.toc': No such file or directory
 
-** (evince:24511): WARNING **: Error when getting information for file '/home/mhasoba/Documents/Teaching/IC_CMEE/2018-19/Coursework/StudentRepos/JamalAliKhan_JAK112/Week1/Code/.pdf': No such file or directory
+** (evince:27376): WARNING **: Error when getting information for file '/home/mhasoba/Documents/Teaching/IC_CMEE/2018-19/Coursework/StudentRepos/JamalAliKhan_JAK112/Week1/Code/.pdf': No such file or directory
 
-** (evince:24511): WARNING **: Error setting file metadata: No such file or directory
+** (evince:27376): WARNING **: Error setting file metadata: No such file or directory
 
-** (evince:24511): WARNING **: Error setting file metadata: No such file or directory
+** (evince:27376): WARNING **: Error setting file metadata: No such file or directory
 
-** (evince:24511): WARNING **: Error setting file metadata: No such file or directory
+** (evince:27376): WARNING **: Error setting file metadata: No such file or directory
 
-** (evince:24511): WARNING **: Error setting file metadata: No such file or directory
+** (evince:27376): WARNING **: Error setting file metadata: No such file or directory
 
-** (evince:24511): WARNING **: Error setting file metadata: No such file or directory
+** (evince:27376): WARNING **: Error setting file metadata: No such file or directory
 
-** (evince:24511): WARNING **: Error setting file metadata: No such file or directory
+** (evince:27376): WARNING **: Error setting file metadata: No such file or directory
 
-** (evince:24511): WARNING **: Error setting file metadata: No such file or directory
+** (evince:27376): WARNING **: Error setting file metadata: No such file or directory
 
-** (evince:24511): WARNING **: Error setting file metadata: No such file or directory
+** (evince:27376): WARNING **: Error setting file metadata: No such file or directory
 
-** (evince:24511): WARNING **: Error setting file metadata: No such file or directory
+** (evince:27376): WARNING **: Error setting file metadata: No such file or directory
 
-** (evince:24511): WARNING **: Error setting file metadata: No such file or directory
+** (evince:27376): WARNING **: Error setting file metadata: No such file or directory
 
-** (evince:24511): WARNING **: Error setting file metadata: No such file or directory
+** (evince:27376): WARNING **: Error setting file metadata: No such file or directory
 
 ======================================================================
 Inspecting script file csvtospace.sh...
@@ -301,7 +301,7 @@ Done!
 
 Code ran without errors
 
-Time consumed = 0.00957s
+Time consumed = 0.01595s
 
 ======================================================================
 Inspecting script file FirstExample.tex...
@@ -369,7 +369,7 @@ Hello mhasoba
 
 Code ran without errors
 
-Time consumed = 0.00710s
+Time consumed = 0.01499s
 
 ======================================================================
 Inspecting script file FirstBiblio.bib...
@@ -467,7 +467,7 @@ This is a shell script!
 
 Code ran without errors
 
-Time consumed = 0.00685s
+Time consumed = 0.02933s
 
 ======================================================================
 ======================================================================
