@@ -1,12 +1,32 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 
-"""Some functions exemplifying the use of control statements"""
-#docstrings are considered part of the running code (normal comments are
-#stripped). Hence, you can access your docstrings at run time.
-__author__ = 'Samraat Pawar (s.pawar@imperial.ac.uk)'
+"""Description of this program or application.
+    You can use several lines"""
+
+__appname__ = '[application name here]'
+
+__name__ == "__main__"
+#__author__ = 'Samraat Pawar (s.pawar@imperial.ac.uk)'
+
 __version__ = '0.0.1'
+__license__ = "License for this code/program"
 
+## imports ##
 import sys
+
+## constants ##
+
+
+## functions ##
+#def main(argv):
+#    """ Main entry point of the program """
+#    print('This is a boilerplate') # NOTE: indented using two tabs or 4 spaces
+#    return 0
+
+#if __name__ == "__main__": 
+#    """Makes sure the "main" function is called from command line"""  
+#    status = main(sys.argv)
+#    sys.exit(status)
 
 def even_or_odd(x=0): # if not specified, x should take value 0.
 
@@ -34,10 +54,9 @@ def is_prime(x=70):
     """Find whether an integer is prime."""
     for i in range(2, x): #  "range" returns a sequence of integers
         if x % i == 0:
-          print "%d is not a prime: %d is a divisor" % (x, i) #Print formatted text "%d %s %f %e" % (20,"30",0.0003,0.00003)
-
+          print("%d is not a prime: %d is a divisor" % (x, i)) 
           return False
-    print "%d is a prime!" % x
+    print("%d is a prime!" % x)
     return True 
 
 def find_all_primes(x=22):
@@ -46,19 +65,23 @@ def find_all_primes(x=22):
     for i in range(2, x + 1):
       if is_prime(i):
         allprimes.append(i)
-    print "There are %d primes between 2 and %d" % (len(allprimes), x)
+    print("There are %d primes between 2 and %d" % (len(allprimes), x))
     return allprimes
-      
+
 def main(argv):
-    # sys.exit("don't want to do this right now!")
-    print even_or_odd(22)
-    print even_or_odd(33)
-    print largest_divisor_five(120)
-    print largest_divisor_five(121)
-    print is_prime(60)
-    print is_prime(59)
-    print find_all_primes(100)
+    print(even_or_odd(22))
+    print(even_or_odd(33))
+    print(largest_divisor_five(120))
+    print(largest_divisor_five(121))
+    print(is_prime(60))
+    print(is_prime(59))
+    print(find_all_primes(100))
     return 0
+
+#status = main(sys.argv)
+#sys.exit(status)
+
+
 
 if (__name__ == "__main__"):
     status = main(sys.argv)
