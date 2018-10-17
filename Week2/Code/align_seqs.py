@@ -1,6 +1,22 @@
-# Two example sequences to match
-seq2 = "ATCGCCGGATTACGGG"
-seq1 = "CAATTCGGAT"
+import csv
+import sys
+
+# The DNA sequences are input from a single csv file, t_in.csv.
+# The best alignment is output as a csv file, t_out.csv.
+
+f = open('../Data/t_in.csv','r')
+g = open('../Data/t_out.csv','w')
+
+seq = csv.reader(f)
+align = csv.writer(g)
+
+for row in seq:
+    print(row)
+    seq1 = row[0]
+    seq2 = row[1]
+    print(
+row[0])
+
 
 # Assign the longer sequence s1, and the shorter to s2
 # l1 is length of the longest, l2 that of the shortest
@@ -54,3 +70,13 @@ for i in range(l1): # Note that you just take the last alignment with the highes
 print(my_best_align)
 print(s1)
 print("Best score:", my_best_score)
+
+q = str(my_best_score)
+algn = [my_best_align, q]
+
+with g:  
+   wtr = csv.writer(g)
+   wtr.writerows(algn)
+
+
+

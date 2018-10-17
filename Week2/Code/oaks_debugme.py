@@ -7,7 +7,7 @@ import sys
 #Define function
 def is_an_oak(name):
     """ Returns True if name is starts with 'quercus' """
-    #pdb.set_trace()
+
     return (name.lower().startswith('quercus') and len(name)<8)
 
 def main(argv):
@@ -15,7 +15,6 @@ def main(argv):
     >>> is_an_oak('Fagus sylvatica') 
     False
     """
-
     f = open('../Data/TestOaksData.csv','r')
     g = open('../Data/JustOaksData.csv','w')
     taxa = csv.reader(f)
@@ -32,17 +31,11 @@ def main(argv):
                 print('FOUND AN OAK!\n')
                 csvwrite.writerow([row[0], row[1]])    
 
-
-
     return 0
     
 
-
-#import pdb; pdb.set_trace()
 if (__name__ == "__main__"):
     status = main(sys.argv)
 
 
-
-#doctest.testmod()
 
