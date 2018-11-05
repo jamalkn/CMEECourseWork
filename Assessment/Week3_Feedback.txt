@@ -1,0 +1,303 @@
+Starting weekly assessment for Jamal Ali, Week3
+
+Current Points = 100
+
+Note that: 
+(1) Major sections begin with a double "====" line 
+(2) Subsections begin with a single "====" line 
+(3) Code output or text file content are printed within single "*****" lines 
+
+======================================================================
+======================================================================
+Your Git repo size this week is about 1.45 MiB on disk 
+
+PART 1: Checking project workflow...
+
+Found the following directories in parent directory: Week1, Assessment, Week2, .git, Week3
+
+Found the following files in parent directory: README.txt, .gitignore
+
+Checking for key files in parent directory...
+
+Found .gitignore in parent directory, great! 
+
+Printing contents of .gitignore:
+**********************************************************************
+*~ 
+*.tmp
+**********************************************************************
+
+Found README in parent directory, named: README.txt
+
+Printing contents of README.txt:
+**********************************************************************
+My CMEE Coursework Repository
+**********************************************************************
+
+======================================================================
+Looking for the weekly directories...
+
+Found 3 weekly directories: Week1, Week2, Week3
+
+The Week3 directory will be assessed 
+
+======================================================================
+======================================================================
+PART 2: Checking weekly code and workflow...
+
+======================================================================
+Assessing WEEK3...
+
+Found the following directories: code, data
+
+Found the following files: 
+
+Checking for readme file in weekly directory...
+
+README file missing, 1 pt deducted
+
+Current Points = 99
+
+Results directory missing!
+
+Creating Results directory...
+
+Found 4 code files: TreeHeight.R, Sample.R, Vectorize1.R, Vectorize2.R
+
+Found the following extra files: KeyWestAnnualMeanTemperature.RData, PoundHillData.csv, GPDDFiltered.RData
+0.5 pt deducted per extra file
+
+Current Points = 97.5
+
+======================================================================
+Testing script/code files...
+
+======================================================================
+Inspecting script file TreeHeight.R...
+
+File contents are:
+**********************************************************************
+# This function calculates heights of trees given distance of each tree 
+# from its base and angle to its top, using  the trigonometric formula 
+#
+# height = distance * tan(radians)
+#
+# ARGUMENTS:
+# degrees      The angle of elevation in radians
+# distance     The distance from base (e.g., meters)
+#
+# OUTPUT:
+# The heights of the tree, same units as "distance"<
+MyData <- read.csv(file="../data/trees.csv", header=TRUE, sep=",")
+
+TreeHeight <- function(degrees, distance){
+  radians <- degrees * pi / 180
+  height <- distance * tan(radians)
+  return (height)
+}
+
+
+
+qw<-TreeHeight(2,3)
+
+
+Species<-MyData[,1]
+Distance.m<-MyData[,2]
+Angle.degrees<-MyData[,3]
+
+
+Tree.Height.m<-double(nrow(MyData))
+
+for (i in 1:nrow(MyData)) {
+	Tree.Height.m[i]<- TreeHeight(MyData[i,3],MyData[i,2])
+}
+
+
+
+
+
+
+
+
+#Tree.Height.m<-TreeHeight(MyData[,2]*10,(MyData[,3])
+#Tree.Height.m<-MyData[,2]*10*tan(MyData[,3]*pi/180)
+new <- data.frame(Species,Distance.m,Angle.degrees,Tree.Height.m)
+write.csv(new,"TreeHts.csv")
+
+
+
+**********************************************************************
+
+Testing TreeHeight.R...
+
+Output (only first 500 characters): 
+
+**********************************************************************
+
+**********************************************************************
+
+Code ran without errors
+
+Time consumed = 0.09850s
+
+======================================================================
+Inspecting script file Sample.R...
+
+File contents are:
+**********************************************************************
+## run a simulation that involves sampling from a population
+
+x <- rnorm(50) #Generate your population
+doit <- function(x){
+    x <- sample(x, replace = TRUE)
+    if(length(unique(x)) > 30) { #only take mean if sample was sufficient
+         print(paste("Mean of this sample was:", as.character(mean(x))))
+         } 
+    }
+
+## Run 100 iterations using vectorization:
+result <- lapply(1:100, function(i) doit(x))
+
+## Or using a for loop:
+result <- vector("list", 100) #Preallocate/Initialize
+for(i in 1:100) {
+    result[[i]] <- doit(x)
+}
+
+print (result)
+**********************************************************************
+
+Testing Sample.R...
+
+Output (only first 500 characters): 
+
+**********************************************************************
+[1] "Mean of this sample was: 0.267480115223129"
+[1] "Mean of this sample was: 0.418206475639405"
+[1] "Mean of this sample was: 0.149941401953151"
+[1] "Mean of this sample was: 0.195815349768055"
+[1] "Mean of this sample was: 0.179217209141341"
+[1] "Mean of this sample was: 0.0902731080957914"
+[1] "Mean of this sample was: 0.238868783725795"
+[1] "Mean of this sample was: 0.0171934476985236"
+[1] "Mean of this sample was: 0.105389361291814"
+[1] "Mean of this sample was: 0.142529132487748"
+[1] "Mean
+**********************************************************************
+
+Code ran without errors
+
+Time consumed = 0.10423s
+
+======================================================================
+Inspecting script file Vectorize1.R...
+
+File contents are:
+**********************************************************************
+Ricker <- function(N0=1, r=1, K=10, generations=50)
+{
+  # Runs a simulation of the Ricker model
+  # Returns a vector of length generations
+
+  N <- rep(NA, generations)    # Creates a vector of NA
+
+  N[1] <- N0
+  for (t in 2:generations)
+  {
+    N[t] <- N[t-1] * exp(r*(1.0-(N[t-1]/K)))
+  }
+  return (N)
+
+
+plot(Ricker(generations=10), type="l")
+
+
+
+
+
+
+
+
+
+
+
+
+**********************************************************************
+
+Testing Vectorize1.R...
+
+Output (only first 500 characters): 
+
+**********************************************************************
+
+**********************************************************************
+
+Encountered error:
+Error: unexpected end of input
+Execution halted
+
+======================================================================
+Inspecting script file Vectorize2.R...
+
+File contents are:
+**********************************************************************
+# Runs the stochastic (with gaussian fluctuations) Ricker Eqn .
+
+rm(list=ls())
+
+stochrick<-function(p0=runif(1000,.5,1.5),r=1.2,K=1,sigma=0.2,numyears=100)
+{
+  #initialize
+  N<-matrix(NA,numyears,length(p0))
+  N[1,]<-p0
+  
+  for (pop in 1:length(p0)) #loop through the populations
+  {
+    for (yr in 2:numyears) #for each pop, loop through the years
+    {
+      N[yr,pop]<-N[yr-1,pop]*exp(r*(1-N[yr-1,pop]/K)+rnorm(1,0,sigma)); print(N[yr,pop])
+    }
+  }
+ return(N)
+
+}
+
+# Now write another function called stochrickvect that vectorizes the above 
+# to the extent possible, with improved performance: 
+
+#print("Vectorized Stochastic Ricker takes:")
+#print(system.time(res2<-stochrickvect()))
+
+
+
+
+
+
+**********************************************************************
+
+Testing Vectorize2.R...
+
+Output (only first 500 characters): 
+
+**********************************************************************
+
+**********************************************************************
+
+Code ran without errors
+
+Time consumed = 0.06439s
+
+======================================================================
+======================================================================
+Finished running scripts
+
+Ran into 1 errors
+
+======================================================================
+======================================================================
+
+FINISHED WEEKLY ASSESSMENT
+
+Current Points for the Week = 97.5
+
+NOTE THAT THESE ARE POINTS, NOT MARKS FOR THE WEEK!
